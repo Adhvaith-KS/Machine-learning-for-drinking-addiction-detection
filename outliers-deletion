@@ -14,3 +14,8 @@ mask = outliers == -1
 
 # To remove the outliers from the DataFrame
 df_cleaned = df[~mask]
+
+df_cleaned['BMI'] = df_cleaned['weight'] / (df_cleaned['height'] * df_cleaned['height'])
+print(df_cleaned[['weight', 'height', 'BMI']].head())
+
+df_cleaned.to_csv('smoking_driking_dataset_Ver01.csv', index=False)
