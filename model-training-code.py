@@ -23,13 +23,14 @@ X = df_cleaned.drop(columns=[target_variable])
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 classifiers = {
-#     "Logistic Regression": LogisticRegression(max_iter=1000),
-#     "Decision Tree": DecisionTreeClassifier(),
-#     "Random Forest": RandomForestClassifier(),
-#     "Support Vector Machine": SVC(),
-    "Naive Bayes": GaussianNB(),
-    "K-Nearest Neighbors": KNeighborsClassifier()
-}
+     "Logistic Regression": LogisticRegression(max_iter=1000),
+     "Decision Tree": DecisionTreeClassifier(),
+     "Random Forest": RandomForestClassifier(),
+#    "Support Vector Machine": SVC(),
+     "Naive Bayes": GaussianNB(),
+#    "K-Nearest Neighbors": KNeighborsClassifier()
+} 
+#I ended up commenting out “Support Vector Machine” and “K-Nearest Neighbours” because these models were taking an extremely long time to train without yielding any result.
 
 for name, classifier in classifiers.items():
     print(f"Training {name}...")
